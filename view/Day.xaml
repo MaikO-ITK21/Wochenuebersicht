@@ -6,9 +6,21 @@
       xmlns:local="clr-namespace:wochenuebersicht_2"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="500"
-      Title="Day">
+      Title="{Binding Selected_KW_Idx }">
 
     <Grid>
-        
+
+
+
+        <ListView HorizontalAlignment="Left"  ItemsSource="{Binding Weekdays}" SelectedIndex="{Binding Selected_Day_Idx}" FontSize="10" Margin="250,42,0,0" Width="250" RenderTransformOrigin="-0.322,0.396" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn  Width="100"  Header="Wochentag" DisplayMemberBinding="{Binding Day}" />
+                    <GridViewColumn   Width="100" Header ="Aufgaben" DisplayMemberBinding="{Binding Task}" />
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="250,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.458,-0.471" Height="37" Width="250"/>
     </Grid>
 </Page>
