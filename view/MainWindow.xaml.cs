@@ -23,7 +23,8 @@ namespace wochenuebersicht_2
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+          
+
         }
     }
 }

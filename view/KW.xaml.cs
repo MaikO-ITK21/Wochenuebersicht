@@ -21,6 +21,7 @@ namespace wochenuebersicht_2
         public KW()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
     }
 }
