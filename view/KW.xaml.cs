@@ -21,7 +21,14 @@ namespace wochenuebersicht_2
         public KW()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            DataContext = new MainViewModel ( );
+
+        }
+        private void Button_Click ( object sender, RoutedEventArgs e )
+        {
+            // View Expense Report
+            Day days = new Day();
+            this.NavigationService.Navigate ( days );
         }
     }
 }

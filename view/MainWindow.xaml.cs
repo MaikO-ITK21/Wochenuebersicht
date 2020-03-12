@@ -20,10 +20,9 @@ namespace wochenuebersicht_2
     /// </summary>
     public partial class MainWindow : NavigationWindow
     {
-        public MainWindow()
+        public MainWindow ( )
         {
-            InitializeComponent();
-          
+            InitializeComponent ( );
 
         }
     }
