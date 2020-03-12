@@ -4,6 +4,7 @@
     {
 
         public string WeekDay { get; set; }
+        public string Aufgabe { get; set; }
 
         
        

@@ -17,6 +17,7 @@ namespace wochenuebersicht_2
 
         public ObservableCollection<Wochenansicht> KW_Week { get; set; }
         public ObservableCollection<DayViewList> DayList { get; set; }
+        
 
         public string CurrentWeek { get; set; }
     
@@ -25,6 +26,10 @@ namespace wochenuebersicht_2
         public ICommand Open_KW { get; set; }
 
         public int Selected_KW_Idx { get; set; }
+        public int SelectetKW => Selected_KW_Idx + 1;
+       
+
+
 
         // make a weekly list for the year (Range 1 => 52)
         public void CreatWeeks()
