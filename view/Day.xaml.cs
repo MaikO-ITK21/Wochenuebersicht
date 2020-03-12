@@ -21,7 +21,8 @@ namespace wochenuebersicht_2
         public Day()
         {
             InitializeComponent();
-            DataContext = new DayView();
+            DataContext = new MainViewModel();
+           
         }
     }
 }

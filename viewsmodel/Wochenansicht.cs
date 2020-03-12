@@ -4,6 +4,7 @@
     {
 
         public string Woche { get; set; }
-        public int KW { get; set; }
+       
+      
     };
 }
