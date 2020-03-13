@@ -12,54 +12,64 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
 
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.RowSpan="2" Grid.Column="0">
-            <ListView ItemsSource="{Binding KW_Week}" SelectedIndex="{Binding Selected_KW_Idx}">
+        <Grid Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Top" Margin="5,5,5,5">
+            <ListView ItemsSource="{Binding KW_Week}" SelectedIndex="{Binding Selected_KW_Idx}" Visibility="Visible" HorizontalAlignment="Center" Width="190" Panel.ZIndex="2">
                 <ListView.View>
-                    <GridView>
+                    <GridView >
                         <GridViewColumn
-                            Width="100"
                             DisplayMemberBinding="{Binding Woche}"
-                            Header="Jahr 2020" />
+                            Header="Jahr 2020" 
+                            />
                     </GridView>
                 </ListView.View>
             </ListView>
         </Grid>
         <Grid Grid.Column="1">
             <ListView
-                Margin="0,0,0,215"
+                Margin="5,5,5,215"
                 ItemsSource="{Binding DayList}"
                 SelectedIndex="{Binding SelectedDay}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding WeekDay}" Header="Woche" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Aufgabe}" Header=" Aufgabe" />
-
+                       
                     </GridView>
-
-
                 </ListView.View>
             </ListView>
-
-
             <TextBox
-                Height="105"
-                Margin="190,224,10,0"
+                Width="150"
+                Height="80"
+                Margin="40,224,5,0"
                 VerticalAlignment="Top"
                 AcceptsReturn="True"
                 Text="{Binding NewAufgabe}"
                 TextWrapping="Wrap" />
             <Button
-                Width="69"
-                Margin="321,334,0,0"
+                Width="75"
+                Margin="115,334,10,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Command="{Binding ClickOK}"
                 Content="Button" />
+        </Grid>
+        <Grid Grid.Column="2">
+            <ListView
+                Margin="0,5,5,5"
+                ItemsSource="{Binding Aufgaben}"
+                SelectedIndex="{Binding SelectedDay}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Aufgabe" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
         </Grid>
     </Grid>
 </Window>
