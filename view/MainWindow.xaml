@@ -28,11 +28,12 @@
                 HorizontalAlignment="Center"
                 Panel.ZIndex="2"
                 ItemsSource="{Binding KW_Week}"
-                SelectedIndex="{Binding Selected_KW_Idx}"
-                Visibility="Visible">
+                SelectedIndex="{Binding Selected_KW_Idx}"  >
+
+               
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Woche}" Header="Jahr 2020" />
+                        <GridViewColumn  DisplayMemberBinding="{Binding Woche}" Header="Jahr 2020" />
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -77,10 +78,10 @@
             <ListView
                 Margin="0,5,5,5"
                 ItemsSource="{Binding Aufgaben}"
-                SelectedIndex="{Binding Auf}">
+                SelectedIndex="{Binding Selected_Day_Idx}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Aufgabe" />
+                        <GridViewColumn Header="{ Binding  ShowDailyTask}" />
                     </GridView>
                 </ListView.View>
             </ListView>
