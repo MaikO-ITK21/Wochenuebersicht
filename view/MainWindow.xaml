@@ -45,7 +45,7 @@
             <ListView
                 Margin="5,5,5,215"
                 ItemsSource="{Binding DayList}"
-                SelectedIndex="{Binding SelectedDay}">
+                SelectedIndex="{Binding Selected_Day_Idx}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding WeekDay}" Header="{Binding SL_KW_TXT}" />
@@ -67,7 +67,7 @@
                 Margin="115,334,10,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Command="{Binding Open_Day}"
+                Command="{Binding Add_daily_task}"
                 Content="Button" />
         </Grid>
         <!--#endregion-->

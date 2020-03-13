@@ -17,27 +17,39 @@ namespace wochenuebersicht_2
 
         public ObservableCollection<DayViewList> DayList { get; set; }
 
-        public ICommand Open_Day { get; set; }
+        public ICommand Add_daily_task { get; set; }
 
-        public ICommand SelectedDay { get; set; }
+       
 
         public int Selected_KW_Idx { get; set; }
 
+        public int Selected_Day_Idx { get; set; }
+
         public string NewDailyTask { get; set; }
 
-        public string CurrentWeek { get; set; }
+      
 
         public int Selected_KW => Selected_KW_Idx + 1;
         public string SL_KW_TXT  => String.Format("Week {0}", Selected_KW);
+
+
+
+
 
         public MainViewModel()
         {
             KW_Week = new ObservableCollection<Wochenansicht>();
             DayList = new ObservableCollection<DayViewList>();
-            Open_Day = new RelayCommand(Open_day, () => true);
+            Add_daily_task = new RelayCommand(Open_day, () => true);
 
             CreatWeeks();
             CreatDay();
+
+
+
+            // OUTPUT TEST CONSOLE 
+            ConsolOutput();
+
         }
 
         /// <summary>
@@ -78,15 +90,21 @@ namespace wochenuebersicht_2
         private void Open_day()
         {
 
-            DayViewList  crWeek= new DayViewList
-            {
-                CurrentWeek = SL_KW_TXT,
-            };
+
+
+
+
+            ConsolOutput();
+        }
+
+
+          // OUTPUT TEST CONSOLE 
+        private void ConsolOutput ()
+        {
+            Debug.WriteLine("----TEST---");
             
-            Debug.WriteLine("Hallo");
-            Wochenansicht e = KW_Week[Selected_KW_Idx];
-            Debug.WriteLine(Selected_KW_Idx);
             Debug.WriteLine(SL_KW_TXT);
+            Debug.WriteLine(Selected_Day_Idx);
         }
     }
 }
