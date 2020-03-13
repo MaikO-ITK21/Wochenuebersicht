@@ -13,23 +13,34 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
-
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Top" Margin="5,5,5,5">
-            <ListView ItemsSource="{Binding KW_Week}" SelectedIndex="{Binding Selected_KW_Idx}" Visibility="Visible" HorizontalAlignment="Center" Width="190" Panel.ZIndex="2">
+        <!--#region Week View -->
+        <Grid
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            Margin="5,5,5,5"
+            VerticalAlignment="Top">
+            <ListView
+                Width="190"
+                HorizontalAlignment="Center"
+                Panel.ZIndex="2"
+                ItemsSource="{Binding KW_Week}"
+                SelectedIndex="{Binding Selected_KW_Idx}"
+                Visibility="Visible">
                 <ListView.View>
-                    <GridView >
-                        <GridViewColumn
-                            DisplayMemberBinding="{Binding Woche}"
-                            Header="Jahr 2020" 
-                            />
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Woche}" Header="Jahr 2020" />
                     </GridView>
                 </ListView.View>
             </ListView>
         </Grid>
+        <!--#endregion-->
+
+
+        <!--#region Day View -->
         <Grid Grid.Column="1">
             <ListView
                 Margin="5,5,5,215"
@@ -37,18 +48,19 @@
                 SelectedIndex="{Binding SelectedDay}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding WeekDay}" Header="Woche" />
-                       
+                        <GridViewColumn DisplayMemberBinding="{Binding WeekDay}" Header="{Binding SL_KW_TXT}" />
                     </GridView>
                 </ListView.View>
             </ListView>
+            <!--#endregion-->
+            <!--#region Button and text field for new tasks -->
             <TextBox
                 Width="150"
                 Height="80"
                 Margin="40,224,5,0"
                 VerticalAlignment="Top"
                 AcceptsReturn="True"
-                Text="{Binding NewAufgabe}"
+                Text="{Binding NewDailyTask}"
                 TextWrapping="Wrap" />
             <Button
                 Width="75"
@@ -58,6 +70,9 @@
                 Command="{Binding Open_Day}"
                 Content="Button" />
         </Grid>
+        <!--#endregion-->
+        <!--#region Task view -->
+        <!--TODO Ausgabe Aufgabe Wochentag -->
         <Grid Grid.Column="2">
             <ListView
                 Margin="0,5,5,5"
@@ -69,7 +84,7 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-
         </Grid>
+        <!--#endregion-->
     </Grid>
 </Window>
