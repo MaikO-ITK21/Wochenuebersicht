@@ -55,7 +55,7 @@
                 Margin="115,334,10,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Command="{Binding ClickOK}"
+                Command="{Binding SelectedDay}"
                 Content="Button" />
         </Grid>
         <Grid Grid.Column="2">

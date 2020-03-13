@@ -23,7 +23,7 @@ namespace wochenuebersicht_2
         public ICommand SelectedDay { get; set; }
 
         public int Selected_KW_Idx { get; set; }
-        public int SelectetKW => Selected_KW_Idx + 1;
+       
 
         public MainViewModel()
         {
