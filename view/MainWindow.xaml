@@ -55,14 +55,14 @@
                 Margin="115,334,10,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Command="{Binding SelectedDay}"
+                Command="{Binding Open_Day}"
                 Content="Button" />
         </Grid>
         <Grid Grid.Column="2">
             <ListView
                 Margin="0,5,5,5"
                 ItemsSource="{Binding Aufgaben}"
-                SelectedIndex="{Binding SelectedDay}">
+                SelectedIndex="{Binding Auf}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Aufgabe" />

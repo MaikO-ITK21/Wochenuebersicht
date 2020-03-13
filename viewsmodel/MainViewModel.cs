@@ -18,7 +18,7 @@ namespace wochenuebersicht_2
         public string CurrentWeek { get; set; }
 
         // Button Command to oben Days for Selected Week
-        public ICommand Open_KW { get; set; }
+        public ICommand Open_Day { get; set; }
 
         public ICommand SelectedDay { get; set; }
 
@@ -29,8 +29,8 @@ namespace wochenuebersicht_2
         {
             KW_Week = new ObservableCollection<Wochenansicht>();
             DayList = new ObservableCollection<DayViewList>();
-            Open_KW = new RelayCommand(Open_Day, () => true);
-            SelectedDay = new RelayCommand(Open_Day, () => true);
+            Open_Day = new RelayCommand(Open_day, () => true);
+         
 
             CreatWeeks();
             CreatDay();
@@ -60,7 +60,7 @@ namespace wochenuebersicht_2
         }
 
         // ToDo Daten Binden
-        private void Open_Day()
+        private void Open_day()
         {
             Debug.WriteLine("Hallo");
         }
