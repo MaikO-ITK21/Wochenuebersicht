@@ -12,11 +12,7 @@ namespace wochenuebersicht_2
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ObservableCollection<Wochenansicht> Weeks { get; set; }
-        public  ObservableCollection<Daily_View> Day { get; set; }
-        
-
-   
-
+        public ObservableCollection<Daily_View> Day { get; set; }
 
         private string[] dayName = { "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag" };
 
@@ -29,63 +25,44 @@ namespace wochenuebersicht_2
         public string NewDailyTask { get; set; }
 
         public int Selected_KW => Selected_KW_Idx + 1;
-        public string SL_KW_TXT => String.Format("Woche {0}", Selected_KW);
+        public string SL_KW_TXT => String.Format ( "Woche {0}", Selected_KW );
 
         public int Selected_Day => Selected_Day_Idx + 1;
 
         // ToDo Wochentag anzeigen => Aufgaben
 
-        public MainViewModel()
+        public MainViewModel ( )
         {
-            Weeks = new ObservableCollection<Wochenansicht>(Enumerable.Range(1, 53).Select(SeedKW));
-            Day = new ObservableCollection<Daily_View>(Enumerable.Range(0, 5).Select(SeedDay));
+            Weeks = new ObservableCollection<Wochenansicht> ( Enumerable.Range ( 1, 53 ).Select ( SeedKW ) );
+            Day = new ObservableCollection<Daily_View> ( Enumerable.Range ( 0, 5 ).Select ( SeedDay ) );
 
-            Test();
+            Test ( );
         }
 
-
-
-
-       public void Test()
+        public void Test ( )
         {
-
-
-
-
-
-            for(int i =1; i<Weeks.Count;i++)
+            for ( int i = 1; i < Weeks.Count; i++ )
             {
-
-               
-
-
-                for(int x = 0; x< Day.Count; x++)
+                for ( int x = 0; x < Day.Count; x++ )
                 {
-
-                    Debug.WriteLine(x);
+                    Debug.WriteLine ( x );
                 }
 
-                Debug.WriteLine(i);
+                Debug.WriteLine ( i );
             }
         }
 
-
-
-
-
-        private Daily_View SeedDay(int seed)
+        private Daily_View SeedDay ( int seed )
         {
             string[] day = { "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag" };
 
             return new Daily_View
             {
-
-                DayName = day[seed],
-
+                DayName = day [ seed ],
             };
         }
 
-        private Wochenansicht SeedKW(int seed) => new Wochenansicht
+        private Wochenansicht SeedKW ( int seed ) => new Wochenansicht
         {
             Week = "Woche",
             Week_NR = seed,
